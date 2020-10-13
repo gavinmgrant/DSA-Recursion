@@ -26,7 +26,7 @@ const findAllPaths = (maze) => {
             return;
         };
 
-        // track x and y values visited before to avoid repeating the same path
+        // track x and y values visited so each path only moves in new direction
         visited.add(x + ';' + y);
 
         const directions = {
@@ -47,6 +47,7 @@ const findAllPaths = (maze) => {
                 currentPath.pop();
             }
         }
+        // clear visited set
         visited.delete(x + ';' + y);
     }
 
