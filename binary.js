@@ -8,7 +8,7 @@ const binaryRep = (num) => {
     if (num === 1) {
         return 1;
     }
-    //  
+    // recurse over function with half value of num then return 0 or 1 depending on remainder operator of num
     return binaryRep(Math.floor(num / 2)) + (num % 2 + '');
 };
 
