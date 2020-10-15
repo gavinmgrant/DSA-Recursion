@@ -64,12 +64,16 @@ let organization = {
 			}
 }}};
 
+let ticks = 1;
+
 const orgChart = (people, depth = 0) => {
+	ticks++;
     // create repeatable indent of 4 spaces
     let indent = " ".repeat(depth * 4);
     
     // takes each person in 'organization' object
 	Object.keys(people).forEach(person => {
+		ticks++;
 		console.log(indent + person);
         orgChart(people[person], depth + 1)
         
@@ -77,3 +81,4 @@ const orgChart = (people, depth = 0) => {
 }
 
 orgChart(organization);
+console.log('ticks: ' + ticks);
