@@ -15,4 +15,20 @@ const fibonacci = (num) => {
     }
 };
 
-console.log(fibonacci(20) + '\nticks: ' + ticks);
+console.log('recursive: ', fibonacci(10) + '\nticks: ' + ticks);
+
+// iterative solution
+
+let ticksIt = 1;
+
+const fib = num => {
+    let arr = [0, 1];
+    ticksIt++;
+    for (let i = 2; i < num + 1; i++) {
+        arr.push(arr[i - 2] + arr[i - 1]);
+        ticksIt++;
+    }
+    return arr;
+}
+
+console.log('iterative: ', fib(10) + '\nticks: ' + ticksIt);
